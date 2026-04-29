@@ -1,65 +1,40 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { PageHero } from "@/components/page-hero";
+
+export const metadata: Metadata = {
+  title: "Home | Golden State Relationship & Trauma Therapy",
+  description: "Warm, evidence-based therapy in California with specialization in EMDR and trauma-informed treatment for individuals, couples, and families.",
+};
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <PageHero
+        title="Therapy that helps you feel grounded, connected, and hopeful again."
+        subtitle="I offer trauma-informed care for Californians navigating anxiety, relationship stress, and painful life experiences. Together we build practical tools, heal old patterns, and create meaningful change."
+        primaryCta={{ href: "/contact", label: "Book a Consultation" }}
+        secondaryCta={{ href: "/services", label: "Explore Services" }}
+      />
+      <section className="section-shell grid gap-6 pb-12 md:grid-cols-3">
+        {[
+          ["EMDR Therapy", "A structured, evidence-based approach for processing trauma and reducing emotional reactivity."],
+          ["Couples Counseling", "Support for communication, conflict repair, and rebuilding trust with clarity and compassion."],
+          ["Individual Therapy", "Personalized treatment for anxiety, grief, transitions, and relationship challenges."],
+        ].map(([title, text]) => (
+          <article key={title} className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
+            <h2 className="text-xl font-semibold text-slate-900">{title}</h2>
+            <p className="mt-3 text-slate-700">{text}</p>
+          </article>
+        ))}
+      </section>
+      <section className="section-shell pb-16">
+        <div className="rounded-2xl bg-sky-900 p-8 text-white sm:p-10">
+          <h2 className="text-2xl font-semibold">Ready to start therapy in a safe, supportive space?</h2>
+          <p className="mt-3 max-w-3xl text-sky-100">I provide telehealth sessions across California and in-person appointments in Pasadena. Reach out for a free 15-minute consultation.</p>
+          <Link href="/contact" className="mt-6 inline-block rounded-full bg-white px-6 py-3 font-semibold text-sky-900">Get Started Today</Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
