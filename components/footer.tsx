@@ -3,23 +3,30 @@ import { therapistName } from "./site-data";
 
 export function Footer() {
   return (
-    <footer className="mt-16 border-t border-sky-100 bg-white">
-      <div className="section-shell grid gap-6 py-10 text-sm text-slate-700 md:grid-cols-3">
+    <footer className="mt-20 border-t border-[var(--border)] bg-[var(--background-soft)]">
+      <div className="section-shell grid gap-10 py-12 text-sm text-[var(--muted-foreground)] md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <p className="font-semibold text-slate-900">{therapistName}</p>
-          <p>Licensed Marriage & Family Therapist (California)</p>
-          <p>Online therapy for adults and couples, statewide.</p>
+          <p className="text-base font-semibold text-[var(--foreground)]">California Quality Counseling Services</p>
+          <p className="mt-2 font-medium text-[var(--foreground)]">{therapistName} #142541</p>
+          <p className="mt-3 max-w-md">Online therapy for adults and couples across California with trauma-informed, relationship-focused care.</p>
+          <p className="mt-3 text-xs">Clients must be physically located in California at the time of each telehealth session.</p>
         </div>
         <div>
-          <p className="font-semibold text-slate-900">Telehealth Scope</p>
-          <p>Sessions are provided by secure video only.</p>
-          <p>You must be physically located in California at the time of each session.</p>
+          <p className="font-semibold uppercase tracking-[0.14em] text-[var(--foreground)]">Practice</p>
+          <ul className="mt-3 space-y-2">
+            <li>Private-pay primary</li>
+            <li>Secure video sessions only</li>
+            <li>California-wide availability</li>
+          </ul>
         </div>
         <div>
-          <p className="font-semibold text-slate-900">Quick Links</p>
-          <Link href="/contact" className="block hover:text-sky-700">Schedule a Consultation</Link>
-          <Link href="/fees-insurance" className="block hover:text-sky-700">View Fees</Link>
-          <Link href="/faqs" className="block hover:text-sky-700">Frequently Asked Questions</Link>
+          <p className="font-semibold uppercase tracking-[0.14em] text-[var(--foreground)]">Quick Links</p>
+          <div className="mt-3 space-y-2">
+            <Link href="/contact" className="block transition hover:text-[var(--brand-deep)]">Schedule a Consultation</Link>
+            <Link href="/fees-insurance" className="block transition hover:text-[var(--brand-deep)]">Fees &amp; Insurance</Link>
+            <Link href="/about" className="block transition hover:text-[var(--brand-deep)]">About Elizabeth</Link>
+            <Link href="/faqs" className="block transition hover:text-[var(--brand-deep)]">FAQs</Link>
+          </div>
         </div>
       </div>
     </footer>
