@@ -19,7 +19,7 @@
 }
 
 body {
-  background: linear-gradient(180deg, var(--background-soft) 0%, var(--background) 35%, #f3efe7 100%);
+  background: radial-gradient(circle at top right, #ffffff 0%, transparent 45%), linear-gradient(180deg, var(--background-soft) 0%, var(--background) 35%, #f3efe7 100%);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   line-height: 1.65;
@@ -30,7 +30,7 @@ body {
 }
 
 .section-spacing {
-  @apply py-14 sm:py-20;
+  @apply py-16 sm:py-24;
 }
 
 .card-elevated {

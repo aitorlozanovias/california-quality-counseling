@@ -3,7 +3,7 @@ import { navLinks, siteName } from "./site-data";
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-30 border-b border-[var(--border)]/80 bg-[var(--background-soft)]/95 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-[var(--border)]/80 bg-[var(--background-soft)]/95 backdrop-blur-md">
       <div className="section-shell py-4">
         <nav className="grid items-center gap-4 xl:grid-cols-[minmax(280px,340px)_1fr]" aria-label="Primary">
           <Link
@@ -14,8 +14,8 @@ export function Navbar() {
             <p className="mt-1 text-[17px] font-semibold leading-tight tracking-tight text-[var(--foreground)]">{siteName}</p>
           </Link>
 
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 xl:justify-end xl:pb-0">
-            <ul className="flex shrink-0 items-center gap-1 text-sm font-medium text-[var(--muted-foreground)] whitespace-nowrap">
+          <div className="flex flex-wrap items-center gap-2 overflow-x-auto pb-1 xl:justify-end xl:pb-0">
+            <ul className="flex shrink-0 items-center gap-1 whitespace-nowrap text-sm font-medium text-[var(--muted-foreground)]">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -31,7 +31,7 @@ export function Navbar() {
               href="/contact"
               className="shrink-0 rounded-full border border-[var(--brand-deep)] bg-[var(--brand-deep)] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_25px_-16px_rgba(35,49,59,0.9)] transition hover:-translate-y-0.5 hover:bg-[var(--brand)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-deep)]"
             >
-              Consult Call
+              Schedule consult
             </Link>
           </div>
         </nav>
