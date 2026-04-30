@@ -22,7 +22,7 @@ body {
   background: linear-gradient(180deg, var(--background-soft) 0%, var(--background) 35%, #f3efe7 100%);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .section-shell {
@@ -30,12 +30,12 @@ body {
 }
 
 .section-spacing {
-  @apply py-12 sm:py-16;
+  @apply py-14 sm:py-20;
 }
 
 .card-elevated {
-  @apply rounded-3xl border bg-[var(--surface)] shadow-[0_16px_45px_-30px_rgba(35,49,59,0.55)];
-  border-color: var(--border);
+  @apply rounded-3xl border bg-[var(--surface)] shadow-[0_18px_50px_-34px_rgba(35,49,59,0.6)];
+  border-color: color-mix(in srgb, var(--border) 88%, white);
 }
 
 .editorial-kicker {
