@@ -10,9 +10,9 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Golden State Relationship & Trauma Therapy",
+  title: "California Quality Counseling Services",
   description:
-    "California Licensed Marriage and Family Therapist specializing in EMDR, trauma-informed individual therapy, and couples counseling.",
+    "Online trauma-informed therapy for adults and couples across California with Elizabeth Agusti, LMFT.",
 };
 
 export default function RootLayout({

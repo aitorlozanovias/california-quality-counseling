@@ -7,19 +7,18 @@ export function Footer() {
       <div className="section-shell grid gap-6 py-10 text-sm text-slate-700 md:grid-cols-3">
         <div>
           <p className="font-semibold text-slate-900">{therapistName}</p>
-          <p>California Licensed Marriage & Family Therapist #102345</p>
-          <p>Serving adults, couples, and families statewide via telehealth.</p>
+          <p>Licensed Marriage & Family Therapist (California)</p>
+          <p>Online therapy for adults and couples, statewide.</p>
         </div>
         <div>
-          <p className="font-semibold text-slate-900">Office Hours</p>
-          <p>Mon-Thu: 9:00 AM - 7:00 PM</p>
-          <p>Fri: 9:00 AM - 3:00 PM</p>
-          <p>By appointment only</p>
+          <p className="font-semibold text-slate-900">Telehealth Scope</p>
+          <p>Sessions are provided by secure video only.</p>
+          <p>You must be physically located in California at the time of each session.</p>
         </div>
         <div>
           <p className="font-semibold text-slate-900">Quick Links</p>
-          <Link href="/contact" className="block hover:text-sky-700">Request a Consultation</Link>
-          <Link href="/fees-insurance" className="block hover:text-sky-700">Fees & Insurance</Link>
+          <Link href="/contact" className="block hover:text-sky-700">Schedule a Consultation</Link>
+          <Link href="/fees-insurance" className="block hover:text-sky-700">View Fees</Link>
           <Link href="/faqs" className="block hover:text-sky-700">Frequently Asked Questions</Link>
         </div>
       </div>

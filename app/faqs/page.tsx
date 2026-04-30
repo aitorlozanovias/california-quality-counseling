@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 
 export const metadata: Metadata = {
-  title: "FAQs | Golden State Relationship & Trauma Therapy",
-  description: "Answers to common questions about therapy format, confidentiality, scheduling, and what to expect during EMDR and couples sessions.",
+  title: "FAQs | California Quality Counseling Services",
+  description: "Answers to common questions about online therapy for California adults and couples.",
 };
 
 export default function Page() {
@@ -12,26 +11,19 @@ export default function Page() {
     <>
       <PageHero
         title="Frequently Asked Questions"
-        subtitle="Answers to common questions about therapy format, confidentiality, scheduling, and what to expect during EMDR and couples sessions."
+        subtitle="Get quick answers about telehealth logistics, payment, and what to expect when beginning therapy."
         primaryCta={{ href: "/contact", label: "Schedule a Consultation" }}
-        secondaryCta={{ href: "/services", label: "View All Services" }}
+        secondaryCta={{ href: "/fees-insurance", label: "View Fees" }}
       />
       <section className="section-shell grid gap-5 pb-16 md:grid-cols-2">
         <article className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-slate-100">
-          <h2 className="text-xl font-semibold text-slate-900">How therapy works</h2>
-          <p className="mt-3 text-slate-700">Sessions are 50 minutes and available online throughout California, with limited in-person availability in Pasadena. Treatment begins with a comprehensive intake, followed by clear goals and regular progress check-ins.</p>
+          <h2 className="text-xl font-semibold text-slate-900">Is therapy online or in person?</h2>
+          <p className="mt-3 text-slate-700">Services are online only. Sessions are held through secure video telehealth.</p>
         </article>
         <article className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-slate-100">
-          <h2 className="text-xl font-semibold text-slate-900">Who I work with</h2>
-          <p className="mt-3 text-slate-700">I work with adults, couples, and families from diverse backgrounds, including first-generation professionals, caregivers, and clients healing from relational trauma, grief, and chronic stress.</p>
+          <h2 className="text-xl font-semibold text-slate-900">Where can clients be located?</h2>
+          <p className="mt-3 text-slate-700">Clients must be physically located in California during each telehealth session.</p>
         </article>
-      </section>
-      <section className="section-shell pb-16">
-        <div className="rounded-2xl bg-teal-50 p-8 ring-1 ring-teal-100">
-          <h2 className="text-2xl font-semibold text-slate-900">Take the next step</h2>
-          <p className="mt-2 text-slate-700">If you are ready to start, reach out for a free consultation and we can discuss your goals, timing, and best-fit treatment plan.</p>
-          <Link href="/contact" className="mt-5 inline-block rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-800">Request Consultation</Link>
-        </div>
       </section>
     </>
   );
