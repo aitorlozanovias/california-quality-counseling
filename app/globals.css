@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #1f2937;
+  --background: #f5f2ea;
+  --background-soft: #fbf8f2;
+  --surface: #fffdf9;
+  --foreground: #23313b;
+  --muted-foreground: #556571;
+  --brand: #587a74;
+  --brand-deep: #3f5f5a;
+  --border: #d9d6cd;
 }
 
 @theme inline {
@@ -13,11 +19,26 @@
 }
 
 body {
-  background: radial-gradient(circle at top, #f0f9ff 0%, #f8fafc 55%, #f8fafc 100%);
+  background: linear-gradient(180deg, var(--background-soft) 0%, var(--background) 35%, #f3efe7 100%);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
+  line-height: 1.6;
 }
 
 .section-shell {
   @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+.section-spacing {
+  @apply py-12 sm:py-16;
+}
+
+.card-elevated {
+  @apply rounded-3xl border bg-[var(--surface)] shadow-[0_16px_45px_-30px_rgba(35,49,59,0.55)];
+  border-color: var(--border);
+}
+
+.editorial-kicker {
+  @apply text-xs font-semibold uppercase tracking-[0.18em];
+  color: var(--brand-deep);
 }

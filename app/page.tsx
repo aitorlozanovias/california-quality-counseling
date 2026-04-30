@@ -8,6 +8,21 @@ export const metadata: Metadata = {
     "Online therapy for California adults and couples facing trauma, anxiety, emotional overwhelm, and relationship stress.",
 };
 
+const serviceCards = [
+  {
+    title: "Adults",
+    text: "Support for anxiety, stress, trauma responses, grief, and major life transitions with practical tools you can use right away.",
+  },
+  {
+    title: "Couples",
+    text: "Relationship-focused therapy to improve communication, repair conflict cycles, and strengthen emotional safety and trust.",
+  },
+  {
+    title: "Trauma-Informed Care",
+    text: "Treatment is paced, collaborative, and attuned to your nervous system, with EMDR-informed integration when clinically appropriate.",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -17,25 +32,47 @@ export default function Home() {
         primaryCta={{ href: "/contact", label: "Schedule a Consultation" }}
         secondaryCta={{ href: "/fees-insurance", label: "View Fees" }}
       />
-      <section className="section-shell grid gap-6 pb-12 md:grid-cols-3">
-        {[
-          ["Adults", "Support for anxiety, stress, trauma responses, grief, and major life transitions with practical tools you can use right away."],
-          ["Couples", "Relationship-focused therapy to improve communication, repair conflict cycles, and strengthen emotional safety and trust."],
-          ["Trauma-Informed Care", "Treatment is paced, collaborative, and attuned to your nervous system, with EMDR-informed integration when clinically appropriate."],
-        ].map(([title, text]) => (
-          <article key={title} className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
-            <h2 className="text-xl font-semibold text-slate-900">{title}</h2>
-            <p className="mt-3 text-slate-700">{text}</p>
-          </article>
-        ))}
+
+      <section className="section-shell pb-8" aria-label="Practice trust details">
+        <div className="card-elevated grid gap-4 p-5 text-sm sm:grid-cols-3 sm:items-center sm:gap-6 sm:p-6">
+          <p className="font-medium text-[var(--foreground)]">Elizabeth Agusti, LMFT #142541</p>
+          <p className="text-[var(--muted-foreground)]">Online therapy for clients physically located in California</p>
+          <p className="text-[var(--muted-foreground)]">Private-pay practice</p>
+        </div>
       </section>
-      <section className="section-shell pb-16">
-        <div className="rounded-2xl bg-sky-900 p-8 text-white sm:p-10">
-          <h2 className="text-2xl font-semibold">Elizabeth Agusti, LMFT</h2>
-          <p className="mt-3 max-w-3xl text-sky-100">
-            Licensed Marriage and Family Therapist providing online psychotherapy throughout California. Telehealth sessions are available only to clients physically located in California at the time of service.
+
+      <section className="section-shell section-spacing pt-6">
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <div>
+            <p className="editorial-kicker">Services</p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-3xl">Focused support for the concerns you are carrying</h2>
+          </div>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {serviceCards.map((service) => (
+            <article key={service.title} className="card-elevated h-full p-7 transition hover:-translate-y-0.5 hover:shadow-[0_20px_50px_-30px_rgba(35,49,59,0.7)]">
+              <h3 className="text-xl font-semibold text-[var(--foreground)]">{service.title}</h3>
+              <p className="mt-3 text-[var(--muted-foreground)]">{service.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-shell pb-16 pt-8 sm:pb-20">
+        <div className="rounded-3xl border border-[var(--brand)]/25 bg-gradient-to-br from-[var(--surface)] via-[var(--surface)] to-[var(--brand)]/10 p-8 shadow-[0_18px_48px_-34px_rgba(35,49,59,0.6)] sm:p-10">
+          <p className="editorial-kicker">Work with Elizabeth Agusti, LMFT #142541</p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-3xl">Begin care with a clear, supportive next step.</h2>
+          <p className="mt-4 max-w-3xl text-[var(--muted-foreground)]">
+            Licensed Marriage and Family Therapist providing online psychotherapy throughout California for adults and couples. Sessions are available only to clients physically located in California during service.
           </p>
-          <Link href="/contact" className="mt-6 inline-block rounded-full bg-white px-6 py-3 font-semibold text-sky-900">Schedule a Consultation</Link>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/contact" className="rounded-full bg-[var(--brand-deep)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[var(--brand)]">
+              Schedule a Consultation
+            </Link>
+            <Link href="/about" className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-6 py-3 text-sm font-semibold text-[var(--foreground)] transition hover:border-[var(--brand)] hover:text-[var(--brand-deep)]">
+              Learn About Elizabeth
+            </Link>
+          </div>
         </div>
       </section>
     </>
