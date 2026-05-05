@@ -5,17 +5,17 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--border)]/80 bg-[var(--background-soft)]/95 backdrop-blur-md">
       <div className="section-shell py-4">
-        <nav className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between xl:gap-6" aria-label="Primary">
+        <nav className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between lg:gap-8" aria-label="Primary">
           <Link
             href="/"
-            className="min-w-0 max-w-[460px] shrink rounded-2xl border border-[var(--border)]/80 bg-[var(--surface)]/80 px-4 py-3 transition hover:border-[var(--brand)]/40 xl:max-w-[360px]"
+            className="min-w-0 rounded-2xl border border-[var(--border)]/80 bg-[var(--surface)]/80 px-4 py-3 transition hover:border-[var(--brand)]/40 lg:max-w-[390px] lg:shrink-0"
           >
             <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--muted-foreground)]">California-Wide Online Therapy</p>
-            <p className="mt-1 truncate text-[17px] font-semibold leading-tight tracking-tight text-[var(--foreground)]">{siteName}</p>
+            <p className="mt-1 text-[17px] font-semibold leading-tight tracking-tight text-[var(--foreground)] lg:truncate">{siteName}</p>
           </Link>
 
-          <div className="flex min-w-0 flex-wrap items-center gap-2 pb-1 xl:flex-1 xl:justify-end xl:pb-0">
-            <ul className="flex min-w-0 flex-wrap items-center justify-end gap-1 text-sm font-medium text-[var(--muted-foreground)] xl:flex-nowrap">
+          <div className="flex min-w-0 flex-wrap items-center gap-2 lg:flex-nowrap lg:justify-end lg:gap-3">
+            <ul className="flex min-w-0 items-center justify-end gap-1 text-sm font-medium text-[var(--muted-foreground)]">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -31,7 +31,7 @@ export function Navbar() {
               href="/contact"
               className="shrink-0 rounded-full border border-[var(--brand-deep)] bg-[var(--brand-deep)] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_25px_-16px_rgba(35,49,59,0.9)] transition hover:-translate-y-0.5 hover:bg-[var(--brand)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-deep)]"
             >
-              Schedule consult
+              Schedule Consultation
             </Link>
           </div>
         </nav>
