@@ -24,40 +24,52 @@ const serviceCards = [
 ];
 
 const painPoints = [
-  "Emotionally overwhelmed, mentally exhausted, and unsure how to slow down.",
-  "Caught in the same painful patterns with yourself or in your relationship.",
-  "Feeling disconnected, misunderstood, or on edge more days than not.",
-  "Carrying unresolved trauma while trying to keep up with daily responsibilities.",
-  "Navigating motherhood, immigration stress, or identity changes without enough support.",
+  "You feel overwhelmed and don’t know where to start",
+  "You keep repeating the same patterns in your relationships",
+  "You feel disconnected, anxious, or constantly on edge",
+  "You’re carrying unresolved experiences that still affect you",
+  "You’re trying to hold everything together but feel exhausted",
 ];
 
 const fitGroups = ["Adults living with anxiety and trauma", "Couples stuck in recurring conflict", "Moms balancing care for everyone but themselves", "Immigrants navigating transition, stress, and belonging"];
+
+const therapySteps = [
+  {
+    title: "Understand what’s happening",
+    text: "We slow down and make sense of patterns, emotions, and experiences.",
+  },
+  {
+    title: "Process and work through it",
+    text: "We gently work through trauma, stress, and relationship challenges.",
+  },
+  {
+    title: "Build lasting change",
+    text: "You develop tools, clarity, and new ways to respond and relate.",
+  },
+];
 
 export default function Home() {
   return (
     <>
       <PageHero
-        title="Feel more grounded, connected, and understood"
-        subtitle="Trauma-informed therapy for adults and couples facing emotional overwhelm, relationship stress, and unresolved trauma, with care available in English and Spanish."
+        title="Feel more grounded, connected, and in control."
+        subtitle="Online therapy for adults and couples across California. Get support for trauma, relationship challenges, and emotional overwhelm with a calm, structured approach."
+        trustBullets={[
+          "7+ years clinical experience",
+          "EMDR-informed, trauma-focused care",
+          "Sessions available in English and Spanish",
+        ]}
         primaryCta={{ href: "/contact", label: "Schedule your free 15-minute consultation" }}
         secondaryCta={{ href: "/fees-insurance", label: "View fees" }}
         showEditorialVisual
       />
 
-      <section className="section-shell -mt-2 pb-12 sm:-mt-4 sm:pb-14" aria-label="Practice trust details">
-        <div className="card-elevated grid gap-4 p-5 text-sm sm:grid-cols-3 sm:items-center sm:gap-6 sm:p-6">
-          <p className="font-semibold text-[var(--foreground)]">7+ years of clinical experience</p>
-          <p className="text-[var(--muted-foreground)]">EMDR-trained, trauma-informed care</p>
-          <p className="text-[var(--muted-foreground)]">Sessions in English and Spanish</p>
-        </div>
-      </section>
-
-      <section className="section-shell section-spacing pt-0">
+      <section className="section-shell section-spacing pt-2">
         <p className="editorial-kicker">You might be feeling…</p>
         <h2 className="mt-2 max-w-3xl text-3xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">If life feels heavy right now, you are not alone.</h2>
         <ul className="mt-8 grid gap-4 md:grid-cols-2">
           {painPoints.map((item) => (
-            <li key={item} className="card-elevated p-6 text-[var(--muted-foreground)]">
+            <li key={item} className="card-elevated p-5 text-[var(--muted-foreground)] sm:p-6">
               {item}
             </li>
           ))}
@@ -68,10 +80,11 @@ export default function Home() {
         <p className="editorial-kicker">How therapy works</p>
         <h2 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">A clear process for meaningful change.</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
-          {["Understand patterns", "Process trauma and emotions", "Build new responses"].map((step, index) => (
-            <article key={step} className="card-elevated p-7">
+          {therapySteps.map((step, index) => (
+            <article key={step.title} className="card-elevated p-7">
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--brand-deep)]">Step {index + 1}</p>
-              <h3 className="mt-3 text-xl font-semibold text-[var(--foreground)]">{step}</h3>
+              <h3 className="mt-3 text-xl font-semibold text-[var(--foreground)]">{step.title}</h3>
+              <p className="mt-3 text-[var(--muted-foreground)]">{step.text}</p>
             </article>
           ))}
         </div>
@@ -84,15 +97,15 @@ export default function Home() {
           </div>
           <article className="card-elevated p-8 sm:p-10">
             <p className="editorial-kicker">Meet Elizabeth Agusti, LMFT #142541</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--foreground)]">Warm, steady support for your healing process.</h2>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--foreground)]">Warm, grounded support for your healing journey.</h2>
             <p className="mt-4 text-[var(--muted-foreground)]">
-              I help adults and couples slow down the chaos, make sense of painful patterns, and build healthier ways of relating to themselves and each other. My style is warm, collaborative, and practical, so therapy feels both emotionally safe and truly useful.
+              Therapy with me is calm, practical, and centered on what matters most to you. We work together to understand what feels heavy, reduce emotional overwhelm, and create steady progress that feels realistic in daily life.
             </p>
+            <p className="mt-4 text-[var(--muted-foreground)]">My goal is to create a space where you feel understood, supported, and able to move forward at your own pace.</p>
             <ul className="mt-6 grid gap-2 text-sm text-[var(--muted-foreground)] sm:grid-cols-2">
-              <li>• 7 years of experience</li>
-              <li>• EMDR-trained</li>
-              <li>• IFS-informed, CBT, and solution-focused</li>
-              <li>• Bilingual care in English &amp; Spanish</li>
+              <li>• 7+ years experience</li>
+              <li>• EMDR-informed care</li>
+              <li>• Bilingual sessions in English &amp; Spanish</li>
             </ul>
           </article>
         </div>
@@ -128,16 +141,16 @@ export default function Home() {
       </section>
 
       <section className="section-shell pb-16 pt-12 sm:pb-24 sm:pt-16">
-        <div className="rounded-3xl border border-[var(--brand)]/28 bg-gradient-to-br from-[var(--surface)] via-[var(--surface)] to-[var(--brand)]/14 p-8 shadow-[0_26px_64px_-42px_rgba(35,49,59,0.82)] sm:p-10 lg:p-14">
+        <div className="rounded-3xl border border-[var(--brand)]/30 bg-[var(--background-soft)] p-8 shadow-[0_26px_64px_-42px_rgba(35,49,59,0.82)] sm:p-10 lg:p-14">
           <p className="editorial-kicker">Next step</p>
-          <h2 className="mt-3 max-w-3xl text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-3xl">Schedule your free 15-minute consultation.</h2>
-          <p className="mt-4 max-w-3xl text-[var(--muted-foreground)]">Private-pay, trauma-informed therapy for California adults and couples, with bilingual sessions in English and Spanish.</p>
+          <h2 className="mt-3 max-w-3xl text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-3xl">Start with a simple conversation.</h2>
+          <p className="mt-4 max-w-3xl text-[var(--muted-foreground)]">Schedule a free 15-minute consultation to talk about your goals, ask questions, and see if this feels like the right fit.</p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link href="/contact" className="rounded-full bg-[var(--brand-deep)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[var(--brand)]">
-              Schedule your free 15-minute consultation
+              Schedule your free consultation
             </Link>
-            <Link href="/about" className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-6 py-3 text-sm font-semibold text-[var(--foreground)] transition hover:border-[var(--brand)] hover:text-[var(--brand-deep)]">
-              Learn about Elizabeth
+            <Link href="/fees-insurance" className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-6 py-3 text-sm font-semibold text-[var(--foreground)] transition hover:border-[var(--brand)] hover:text-[var(--brand-deep)]">
+              Learn about fees
             </Link>
           </div>
         </div>
