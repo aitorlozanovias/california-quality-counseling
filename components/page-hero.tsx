@@ -10,16 +10,16 @@ type PageHeroProps = {
 
 export function PageHero({ title, subtitle, primaryCta, secondaryCta, showEditorialVisual = false }: PageHeroProps) {
   return (
-    <section className="section-shell section-spacing">
-      <div className="card-elevated relative overflow-hidden p-8 sm:p-12 lg:p-14">
+    <section className="section-shell section-spacing pt-10 sm:pt-14">
+      <div className="card-elevated relative overflow-hidden p-8 sm:p-12 lg:p-16">
         <div className="pointer-events-none absolute -right-24 -top-10 h-72 w-72 rounded-full bg-[var(--brand)]/12 blur-3xl" aria-hidden />
         <div className="pointer-events-none absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-white/50 blur-3xl" aria-hidden />
 
         <div className={`relative ${showEditorialVisual ? "grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center" : ""}`}>
           <div>
-            <p className="editorial-kicker mb-4">Trauma-Informed, Relationship-Focused Care</p>
-            <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-[var(--foreground)] sm:text-5xl lg:text-6xl">{title}</h1>
-            <p className="mt-6 max-w-2xl text-[17px] text-[var(--muted-foreground)] sm:text-xl">{subtitle}</p>
+            <p className="editorial-kicker mb-5">Trauma-Informed, Relationship-Focused Care</p>
+            <h1 className="max-w-3xl text-[2.35rem] font-semibold leading-[1.06] tracking-[-0.02em] text-[var(--foreground)] sm:text-5xl lg:text-[3.7rem]">{title}</h1>
+            <p className="mt-7 max-w-2xl text-[17px] text-[var(--muted-foreground)] sm:text-xl">{subtitle}</p>
             {(primaryCta || secondaryCta) && (
               <div className="mt-9 flex flex-wrap gap-3">
                 {primaryCta && (

@@ -5,22 +5,22 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--border)]/80 bg-[var(--background-soft)]/95 backdrop-blur-md">
       <div className="section-shell py-4">
-        <nav className="grid items-center gap-4 xl:grid-cols-[minmax(280px,340px)_1fr]" aria-label="Primary">
+        <nav className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between xl:gap-6" aria-label="Primary">
           <Link
             href="/"
-            className="rounded-2xl border border-[var(--border)]/80 bg-[var(--surface)]/80 px-4 py-3 transition hover:border-[var(--brand)]/40"
+            className="min-w-0 max-w-[460px] shrink rounded-2xl border border-[var(--border)]/80 bg-[var(--surface)]/80 px-4 py-3 transition hover:border-[var(--brand)]/40 xl:max-w-[360px]"
           >
             <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--muted-foreground)]">California-Wide Online Therapy</p>
-            <p className="mt-1 text-[17px] font-semibold leading-tight tracking-tight text-[var(--foreground)]">{siteName}</p>
+            <p className="mt-1 truncate text-[17px] font-semibold leading-tight tracking-tight text-[var(--foreground)]">{siteName}</p>
           </Link>
 
-          <div className="flex flex-wrap items-center gap-2 overflow-x-auto pb-1 xl:justify-end xl:pb-0">
-            <ul className="flex shrink-0 items-center gap-1 whitespace-nowrap text-sm font-medium text-[var(--muted-foreground)]">
+          <div className="flex min-w-0 flex-wrap items-center gap-2 pb-1 xl:flex-1 xl:justify-end xl:pb-0">
+            <ul className="flex min-w-0 flex-wrap items-center justify-end gap-1 text-sm font-medium text-[var(--muted-foreground)] xl:flex-nowrap">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="rounded-full px-3 py-2 transition hover:bg-[var(--surface)] hover:text-[var(--brand-deep)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand)]"
+                    className="block whitespace-nowrap rounded-full px-3 py-2 transition hover:bg-[var(--surface)] hover:text-[var(--brand-deep)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand)]"
                   >
                     {link.label}
                   </Link>
