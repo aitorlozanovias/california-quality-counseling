@@ -34,7 +34,7 @@ body {
 }
 
 .card-elevated {
-  @apply rounded-3xl border bg-[var(--surface)] shadow-[0_18px_50px_-34px_rgba(35,49,59,0.6)];
+  @apply rounded-3xl border bg-[var(--surface)] shadow-[0_20px_56px_-38px_rgba(35,49,59,0.55)];
   border-color: color-mix(in srgb, var(--border) 88%, white);
 }
 
